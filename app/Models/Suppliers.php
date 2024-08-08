@@ -21,8 +21,7 @@ class Suppliers extends Model
         'Suppliers_address', 
         'Suppliers_document', 
         'Document_type_fk', 
-        'User_fk', 
-        'Subscriber_fk'
+        'User_fk'
     ];
 
     protected $useTimestamps = true;
@@ -38,9 +37,8 @@ class Suppliers extends Model
         'Suppliers_address' => 'required|max_length[255]',
         'Suppliers_document' => 'required|max_length[50]',
         'Document_type_fk' => 'required|is_natural_no_zero',
-        'User_fk' => 'required|is_natural_no_zero',
-        'Subscriber_fk' => 'required|is_natural_no_zero'
-    ];
+        'User_fk' => 'required|is_natural_no_zero'
+        ];
 
     protected $validationMessages = [
         'Suppliers_name' => [
@@ -71,10 +69,6 @@ class Suppliers extends Model
         'User_fk' => [
             'required' => 'El ID del usuario es obligatorio',
             'is_natural_no_zero' => 'El ID del usuario debe ser un número natural no cero'
-        ],
-        'Subscriber_fk' => [
-            'required' => 'El ID del suscriptor es obligatorio',
-            'is_natural_no_zero' => 'El ID del suscriptor debe ser un número natural no cero'
         ]
     ];
 }

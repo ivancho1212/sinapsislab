@@ -20,4 +20,21 @@ class UserStatus extends Model
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
     protected $deletedField  = 'deleted_at';
+
+    // Validaciones
+    protected $validationRules = [
+        'User_status_name' => 'required|min_length[3]|max_length[50]',
+        'User_status_description' => 'permit_empty|max_length[255]',
+    ];
+
+    protected $validationMessages = [
+        'User_status_name' => [
+            'required' => 'El nombre del estado de usuario es obligatorio.',
+            'min_length' => 'El nombre del estado de usuario debe tener al menos 3 caracteres.',
+            'max_length' => 'El nombre del estado de usuario no puede exceder los 50 caracteres.',
+        ],
+        'User_status_description' => [
+            'max_length' => 'La descripción del estado de usuario no puede exceder los 255 caracteres.',
+        ],
+    ];
 }
