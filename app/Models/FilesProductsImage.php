@@ -6,8 +6,8 @@ use CodeIgniter\Model;
 
 class FilesProducts extends Model
 {
-    protected $table      = 'files_products';
-    protected $primaryKey = 'Files_products_id';
+    protected $table      = 'files_products_image';
+    protected $primaryKey = 'Files_products_image_id';
 
     protected $useAutoIncrement = true;
 
