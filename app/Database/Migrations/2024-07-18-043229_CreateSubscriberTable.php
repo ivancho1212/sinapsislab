@@ -20,7 +20,12 @@ class CreateSubscriberTable extends Migration
                 'constraint' => '20',
                 'null' => false,
             ],
-            'Subscriber_last_name' => [
+            'Subscriber_trade_name' => [
+                'type' => 'VARCHAR',
+                'constraint' => '20',
+                'null' => false,
+            ],
+            'Subscriber_document' => [
                 'type' => 'VARCHAR',
                 'constraint' => '20',
                 'null' => false,
@@ -44,13 +49,25 @@ class CreateSubscriberTable extends Migration
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
-                'null' => true, // Permitir que sea nulo
+                'null' => true, 
             ],
             'User_fk' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
-                'null' => true, // Permitir que sea nulo
+                'null' => true, 
+            ],
+            'Company_type_fk' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
+                'null' => true, 
+            ],
+            'Document_type_fk' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
+                'null' => true,
             ],
             'created_at' => [
                 'type' => 'DATETIME',
@@ -68,6 +85,8 @@ class CreateSubscriberTable extends Migration
 
         $this->forge->addKey('Subscriber_id', true);
         $this->forge->addForeignKey('Company_fk', 'company', 'Company_id', 'SET NULL', 'CASCADE');
+        $this->forge->addForeignKey('Company_type_fk', 'company_type', 'Company_type_id', 'SET NULL', 'CASCADE');
+        $this->forge->addForeignKey('Document_type_fk', 'document_type', 'Document_type_id', 'SET NULL', 'CASCADE');
         $this->forge->addForeignKey('User_fk', 'user', 'User_id', 'SET NULL', 'CASCADE');
         $this->forge->createTable('subscriber');
     }

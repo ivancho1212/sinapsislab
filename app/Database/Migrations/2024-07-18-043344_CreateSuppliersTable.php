@@ -52,6 +52,12 @@ class CreateSuppliersTable extends Migration
                 'unsigned' => true,
                 'null' => true,
             ],
+            'Company_type_fk' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
+                'null' => true,
+            ],
             'created_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
@@ -68,6 +74,7 @@ class CreateSuppliersTable extends Migration
 
         $this->forge->addKey('Suppliers_id', true, true);
         $this->forge->addForeignKey('Document_type_fk', 'document_type', 'Document_type_id', 'SET NULL', 'CASCADE');
+        $this->forge->addForeignKey('Company_type_fk', 'company_type', 'Company_type_id', 'SET NULL', 'CASCADE');
         $this->forge->addForeignKey('User_fk', 'user', 'User_id', 'SET NULL', 'CASCADE');
         $this->forge->createTable('suppliers');
     }

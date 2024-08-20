@@ -20,12 +20,22 @@ class CreateProductsTable extends Migration
                 'constraint' => '35',
                 'null'       => false,
             ],
+            'Products_name_large' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '55',
+                'null'       => false,
+            ],
             'Products_description' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
                 'null'       => false,
             ],
-            'Products_price' => [
+            'Products_price_net' => [
+                'type'       => 'INT',
+                'constraint' => 11,
+                'null'       => false,
+            ],
+            'Products_price_gross' => [
                 'type'       => 'INT',
                 'constraint' => 11,
                 'null'       => false,

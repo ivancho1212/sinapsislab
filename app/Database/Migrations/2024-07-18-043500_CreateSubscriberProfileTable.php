@@ -15,7 +15,7 @@ class CreateSubscriberProfileTable extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'Subscriber_profile_name' => [
+            'Subscriber_profile_about' => [
                 'type' => 'VARCHAR',
                 'constraint' => 256,
                 'null' => false,
