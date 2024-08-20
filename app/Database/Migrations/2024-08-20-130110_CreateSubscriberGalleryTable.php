@@ -9,7 +9,7 @@ class CreateSubscriberGalleryTable extends Migration
     public function up()
     {
         $this->forge->addField([
-            'Subscriber_profile_id' => [
+            'Subscriber_gallery_id' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
@@ -24,7 +24,7 @@ class CreateSubscriberGalleryTable extends Migration
                 'unsigned' => true,
             ],
         ]);
-        $this->forge->addKey('Subscriber_profile_id', true);
+        $this->forge->addKey('Subscriber_gallery_id', true);
 
         $this->forge->addForeignKey('Subscriber_profile_id', 'subscriber_profile', 'Subscriber_profile_id', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('Files_id', 'files', 'Files_id', 'CASCADE', 'CASCADE');
