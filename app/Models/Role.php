@@ -29,8 +29,8 @@ class Role extends Model
     protected $validationRules = [
         'Role_name' => 'required|max_length[50]',
         'Role_description' => 'permit_empty|max_length[255]',
-        'Company_fk' => 'required|is_natural_no_zero'
-    ];
+        'Company_fk' => 'permit_empty|is_natural_no_zero' // Cambiado de required a permit_empty
+    ];    
 
     protected $validationMessages = [
         'Role_name' => [

@@ -37,8 +37,8 @@ class Profile extends Model
         'Profile_phone' => 'required|max_length[20]',
         'Profile_address' => 'required|max_length[255]',
         'Profile_photo' => 'permit_empty|max_length[255]',
-        'User_fk' => 'required|is_natural_no_zero'
-    ];
+        'User_fk' => 'permit_empty|is_natural_no_zero' // Cambiado de required a permit_empty
+    ];    
 
     protected $validationMessages = [
         'Profile_name' => [

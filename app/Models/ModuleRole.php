@@ -26,26 +26,24 @@ class ModuleRole extends Model
     protected $deletedField   = 'deleted_at';
 
     protected $validationRules = [
-        'Module_role_name' => 'required|integer|max_length[11]',
-        'Module_fk'        => 'required|integer|max_length[11]',
-        'Role_fk'          => 'required|integer|max_length[11]',
+        'Module_role_name' => 'required|string|max_length[100]',
+        'Module_fk'        => 'required|integer',
+        'Role_fk'          => 'required|integer',
     ];
 
     protected $validationMessages = [
         'Module_role_name' => [
-            'required'   => 'The module role name is required.',
-            'integer'    => 'The module role name must be an integer.',
-            'max_length' => 'The module role name cannot exceed 11 characters.'
+            'required'   => 'El nombre del rol del módulo es obligatorio.',
+            'string'     => 'El nombre del rol del módulo debe ser una cadena de caracteres.',
+            'max_length' => 'El nombre del rol del módulo no puede exceder los 100 caracteres.'
         ],
         'Module_fk' => [
-            'required'   => 'The module foreign key is required.',
-            'integer'    => 'The module foreign key must be an integer.',
-            'max_length' => 'The module foreign key cannot exceed 11 characters.'
+            'required'   => 'La clave externa del módulo es obligatoria.',
+            'integer'    => 'La clave externa del módulo debe ser un número entero.'
         ],
         'Role_fk' => [
-            'required'   => 'The role foreign key is required.',
-            'integer'    => 'The role foreign key must be an integer.',
-            'max_length' => 'The role foreign key cannot exceed 11 characters.'
+            'required'   => 'La clave externa del rol es obligatoria.',
+            'integer'    => 'La clave externa del rol debe ser un número entero.'
         ],
     ];
 

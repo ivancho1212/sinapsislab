@@ -26,18 +26,18 @@ class Permissions extends Model
 
     protected $validationRules = [
         'Permissions_name' => 'required|string|max_length[20]',
-        'Permissions_description' => 'permit_empty|string|max_length[20]',
+        'Permissions_description' => 'permit_empty|string|max_length[100]', // Longitud corregida para coincidir con la migración
     ];
 
     protected $validationMessages = [
         'Permissions_name' => [
-            'required' => 'The permissions name is required.',
-            'string' => 'The permissions name must be a string.',
-            'max_length' => 'The permissions name cannot exceed 20 characters.',
+            'required' => 'El nombre del permiso es obligatorio.',
+            'string' => 'El nombre del permiso debe ser una cadena de texto.',
+            'max_length' => 'El nombre del permiso no puede exceder los 20 caracteres.',
         ],
         'Permissions_description' => [
-            'string' => 'The permissions description must be a string.',
-            'max_length' => 'The permissions description cannot exceed 20 characters.',
+            'string' => 'La descripción del permiso debe ser una cadena de texto.',
+            'max_length' => 'La descripción del permiso no puede exceder los 100 caracteres.', // Longitud corregida para coincidir con la migración
         ],
     ];
 

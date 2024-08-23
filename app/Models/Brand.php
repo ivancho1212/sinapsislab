@@ -38,4 +38,6 @@ class Brand extends Model
             'max_length' => 'La descripción de la marca no puede exceder los 100 caracteres.',
         ],
     ];
+
+    protected $skipValidation = false;
 }

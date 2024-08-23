@@ -23,7 +23,7 @@ class Module extends Model
         'Module_description'
     ];
 
-    protected $useTtimestamps = true;
+    protected $useTimestamps = true; // Corregido
     protected $createdField   = 'created_at';
     protected $updatedField   = 'updated_at';
     protected $deletedField   = 'deleted_at';
@@ -39,26 +39,26 @@ class Module extends Model
 
     protected $validationMessages = [
         'Module_name' => [
-            'required' => 'The module name is required.',
-            'max_length' => 'The module name cannot exceed 30 characters.'
+            'required' => 'El nombre del módulo es obligatorio.',
+            'max_length' => 'El nombre del módulo no puede exceder los 30 caracteres.'
         ],
         'Module_icons' => [
-            'required' => 'The module icon is required.',
-            'max_length' => 'The module icon cannot exceed 10 characters.'
+            'required' => 'El icono del módulo es obligatorio.',
+            'max_length' => 'El icono del módulo no puede exceder los 10 caracteres.'
         ],
         'Module_route' => [
-            'required' => 'The module route is required.',
-            'max_length' => 'The module route cannot exceed 20 characters.'
+            'required' => 'La ruta del módulo es obligatoria.',
+            'max_length' => 'La ruta del módulo no puede exceder los 20 caracteres.'
         ],
         'Module_major' => [
-            'required' => 'The module major flag is required.',
-            'boolean' => 'The module major flag must be a boolean value.'
+            'required' => 'El indicador principal del módulo es obligatorio.',
+            'boolean' => 'El indicador principal del módulo debe ser un valor booleano.'
         ],
         'Module_sub' => [
-            'integer' => 'The module sub must be an integer.'
+            'integer' => 'El sub-módulo debe ser un número entero.'
         ],
         'Module_description' => [
-            'max_length' => 'The module description cannot exceed 100 characters.'
+            'max_length' => 'La descripción del módulo no puede exceder los 100 caracteres.'
         ],
     ];
 

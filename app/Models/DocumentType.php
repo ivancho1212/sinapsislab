@@ -23,10 +23,10 @@ class DocumentType extends Model
 
     // Validaciones
     protected $validationRules = [
-        'Document_type_name' => 'required|max_length[255]',
-        'Document_type_code' => 'required|max_length[50]',
-        'Document_type_description' => 'max_length[255]'
-    ];
+        'Document_type_name' => 'required|max_length[50]', // Ajustado de 255 a 50
+        'Document_type_code' => 'required|max_length[5]',  // Ajustado de 50 a 5
+        'Document_type_description' => 'max_length[100]'   // Ajustado de 255 a 100
+    ];    
 
     protected $validationMessages = [
         'Document_type_name' => [

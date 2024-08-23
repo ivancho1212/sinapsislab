@@ -19,7 +19,7 @@ class ProductType extends Model
         'Product_type_description',
     ];
 
-    protected $useTimestamps = true;
+    protected $useTimestamps = true; // Corregido aquí
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
     protected $deletedField  = 'deleted_at';

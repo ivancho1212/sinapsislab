@@ -25,9 +25,9 @@ class User extends Model
     protected $validationRules = [
         'User_user' => 'required|max_length[255]',
         'User_password' => 'required|max_length[255]',
-        'User_status_fk' => 'required|is_natural_no_zero',
-        'Role_fk' => 'required|is_natural_no_zero'
-    ];
+        'User_status_fk' => 'permit_empty|is_natural_no_zero', // Cambiado de required a permit_empty
+        'Role_fk' => 'permit_empty|is_natural_no_zero' // Cambiado de required a permit_empty
+    ];    
 
     protected $validationMessages = [
         'User_user' => [

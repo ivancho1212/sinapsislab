@@ -16,8 +16,10 @@ class Product extends Model
 
     protected $allowedFields = [
         'Products_name',
+        'Products_name_large', // Agregado
         'Products_description',
-        'Products_price',
+        'Products_price_net', // Modificado
+        'Products_price_gross', // Modificado
         'Product_type_fk',
         'Packing_fk',
         'Brand_fk',
@@ -33,8 +35,10 @@ class Product extends Model
 
     protected $validationRules = [
         'Products_name' => 'required|string|max_length[35]',
+        'Products_name_large' => 'required|string|max_length[55]', // Agregado
         'Products_description' => 'required|string|max_length[100]',
-        'Products_price' => 'required|integer',
+        'Products_price_net' => 'required|integer', // Modificado
+        'Products_price_gross' => 'required|integer', // Modificado
         'Product_type_fk' => 'required|integer',
         'Packing_fk' => 'required|integer',
         'Brand_fk' => 'required|integer',
@@ -45,42 +49,51 @@ class Product extends Model
 
     protected $validationMessages = [
         'Products_name' => [
-            'required' => 'The product name is required.',
-            'string' => 'The product name must be a string.',
-            'max_length' => 'The product name cannot exceed 35 characters.',
+            'required' => 'El nombre del producto es obligatorio.',
+            'string' => 'El nombre del producto debe ser una cadena.',
+            'max_length' => 'El nombre del producto no puede exceder los 35 caracteres.',
+        ],
+        'Products_name_large' => [
+            'required' => 'El nombre largo del producto es obligatorio.',
+            'string' => 'El nombre largo del producto debe ser una cadena.',
+            'max_length' => 'El nombre largo del producto no puede exceder los 55 caracteres.',
         ],
         'Products_description' => [
-            'required' => 'The product description is required.',
-            'string' => 'The product description must be a string.',
-            'max_length' => 'The product description cannot exceed 100 characters.',
+            'required' => 'La descripción del producto es obligatoria.',
+            'string' => 'La descripción del producto debe ser una cadena.',
+            'max_length' => 'La descripción del producto no puede exceder los 100 caracteres.',
         ],
-        'Products_price' => [
-            'required' => 'The product price is required.',
-            'integer' => 'The product price must be an integer.',
+        'Products_price_net' => [
+            'required' => 'El precio neto del producto es obligatorio.',
+            'integer' => 'El precio neto del producto debe ser un entero.',
+        ],
+        'Products_price_gross' => [
+            'required' => 'El precio bruto del producto es obligatorio.',
+            'integer' => 'El precio bruto del producto debe ser un entero.',
         ],
         'Product_type_fk' => [
-            'required' => 'The product type is required.',
-            'integer' => 'The product type must be an integer.',
+            'required' => 'El tipo de producto es obligatorio.',
+            'integer' => 'El tipo de producto debe ser un entero.',
         ],
         'Packing_fk' => [
-            'required' => 'The packing is required.',
-            'integer' => 'The packing must be an integer.',
+            'required' => 'El embalaje es obligatorio.',
+            'integer' => 'El embalaje debe ser un entero.',
         ],
         'Brand_fk' => [
-            'required' => 'The brand is required.',
-            'integer' => 'The brand must be an integer.',
+            'required' => 'La marca es obligatoria.',
+            'integer' => 'La marca debe ser un entero.',
         ],
         'Unit_measurement_fk' => [
-            'required' => 'The unit measurement is required.',
-            'integer' => 'The unit measurement must be an integer.',
+            'required' => 'La unidad de medida es obligatoria.',
+            'integer' => 'La unidad de medida debe ser un entero.',
         ],
         'Product_status_fk' => [
-            'required' => 'The product status is required.',
-            'integer' => 'The product status must be an integer.',
+            'required' => 'El estado del producto es obligatorio.',
+            'integer' => 'El estado del producto debe ser un entero.',
         ],
         'Suppliers_fk' => [
-            'required' => 'The suppliers is required.',
-            'integer' => 'The suppliers must be an integer.',
+            'required' => 'El proveedor es obligatorio.',
+            'integer' => 'El proveedor debe ser un entero.',
         ],
     ];
 

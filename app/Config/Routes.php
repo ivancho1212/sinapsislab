@@ -14,15 +14,6 @@ $routes->get('cart', 'Shop::cart');
 $routes->get('chackout', 'Shop::chackout');
 $routes->get('error', 'Shop::error');
 
-$routes->resource('company');
-$routes->resource('user');
-$routes->resource('subscriber');
-$routes->resource('customers');
-$routes->resource('suppliers');
-$routes->resource('employees');
-$routes->resource('subscriber_profile');
-$routes->resource('document_type');
-
 
 
 
